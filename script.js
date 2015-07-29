@@ -18,9 +18,20 @@ React.render(
     document.getElementById('myDiv2')
 );
 
+function getState() {
+    return {
+        one: 'test'
+        , two: 'test2'
+        , three: 'test3'
+    }
+}
+
 var MyNewComponent = React.createClass({
     render: function() {
         console.log(this.props.name);
+        console.log(this.state.one);
+        console.log(this.state.two);
+        console.log(this.state.three);
         return (
             <h1>Hello, {this.props.name}!</h1>
         );
@@ -30,6 +41,9 @@ var MyNewComponent = React.createClass({
     },
     componentDidMount: function() {
         console.log('this should come after render');
+    },
+    getInitialState: function() {
+        return getState();
     }
 });
 
