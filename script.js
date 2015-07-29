@@ -17,3 +17,26 @@ React.render(
     <MyComponent/>,
     document.getElementById('myDiv2')
 );
+
+var MyNewComponent = React.createClass({
+    render: function() {
+        console.log(this.props.name);
+        return (
+            <h1>Hello, {this.props.name}!</h1>
+        );
+    },
+    componentWillMount: function() {
+        console.log('this should come first');
+    },
+    componentDidMount: function() {
+        console.log('this should come after render');
+    },
+    shouldComponentUpdate: function() {
+        return true;
+    }
+});
+
+React.render(
+    <MyNewComponent name="Handsome"/>,
+    document.getElementById('myDiv3')
+);
