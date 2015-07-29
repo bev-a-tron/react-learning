@@ -30,9 +30,6 @@ var MyNewComponent = React.createClass({
     },
     componentDidMount: function() {
         console.log('this should come after render');
-    },
-    shouldComponentUpdate: function() {
-        return true;
     }
 });
 
