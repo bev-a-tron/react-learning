@@ -44,10 +44,20 @@ var MyNewComponent = React.createClass({
     },
     getInitialState: function() {
         return getState();
+    },
+    getDefaultProps: function() {
+        return {
+            name: 'Beautiful'
+        }
     }
 });
 
 React.render(
     <MyNewComponent name="Handsome"/>,
     document.getElementById('myDiv3')
+);
+
+React.render(
+    <MyNewComponent />,
+    document.getElementById('myDiv4')
 );
