@@ -33,7 +33,10 @@ var MyNewComponent = React.createClass({
         console.log(this.state.two);
         console.log(this.state.three);
         return (
+            <div>
             <h1>Hello, {this.props.name}!</h1>
+                <h2>{this.state.one}</h2>
+            </div>
         );
     },
     componentWillMount: function() {
@@ -60,4 +63,22 @@ React.render(
 React.render(
     <MyNewComponent />,
     document.getElementById('myDiv4')
+);
+
+var MyComponent2 = React.createClass({
+    getInitialState: function() {
+        return {
+            count: 5
+        }
+    },
+    render: function() {
+        return (
+            <h1>{this.state.count}</h1>
+        )
+    }
+});
+
+React.render(
+    <MyComponent2 />,
+    document.getElementById('myDiv5')
 );
