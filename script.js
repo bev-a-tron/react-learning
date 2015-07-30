@@ -32,8 +32,6 @@ var MyNewComponent = React.createClass({
         console.log(this.state.one);
         console.log(this.state.two);
         console.log(this.state.three);
-        this.updateState();
-        this.props.name = 'Lalalalalal'; // you can update this?!  Maybe you just *should* treat it as immutable.
         return (
             <div>
             <h1>Hello, {this.props.name}!</h1>
@@ -45,6 +43,7 @@ var MyNewComponent = React.createClass({
     },
     componentWillMount: function() {
         console.log('this should come first');
+        this.updateState();
     },
     componentDidMount: function() {
         console.log('this should come after render');
@@ -58,7 +57,9 @@ var MyNewComponent = React.createClass({
         }
     },
     updateState: function() {
-        this.state.one = 'lollipop'
+        this.setState({
+            one: 'cake'
+        });
     }
 });
 
