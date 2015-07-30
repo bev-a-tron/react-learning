@@ -32,10 +32,14 @@ var MyNewComponent = React.createClass({
         console.log(this.state.one);
         console.log(this.state.two);
         console.log(this.state.three);
+        this.updateState();
+        this.props.name = 'Lalalalalal'; // you can update this?!  Maybe you just *should* treat it as immutable.
         return (
             <div>
             <h1>Hello, {this.props.name}!</h1>
                 <h2>{this.state.one}</h2>
+                <h3>{this.state.two}</h3>
+                <p>{5 * 3}</p>
             </div>
         );
     },
@@ -52,6 +56,9 @@ var MyNewComponent = React.createClass({
         return {
             name: 'Beautiful'
         }
+    },
+    updateState: function() {
+        this.state.one = 'lollipop'
     }
 });
 
