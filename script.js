@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 React.render(
     <h1>Hello, world!</h1>,
     document.getElementById('myDiv')
@@ -20,9 +19,9 @@ React.render(
 
 function getState() {
     return {
-        one: 'test'
-        , two: 'test2'
-        , three: 'test3'
+        one: 1
+        , two: 2
+        , three: 3
     }
 }
 
@@ -38,12 +37,12 @@ var MyNewComponent = React.createClass({
                 <h2>{this.state.one}</h2>
                 <h3>{this.state.two}</h3>
                 <p>{5 * 3}</p>
+                <button onClick={this.updateState}>Click me</button>
             </div>
         );
     },
     componentWillMount: function() {
         console.log('this should come first');
-        this.updateState();
     },
     componentDidMount: function() {
         console.log('this should come after render');
@@ -58,7 +57,7 @@ var MyNewComponent = React.createClass({
     },
     updateState: function() {
         this.setState({
-            one: 'cake'
+            one: this.state.one + 1
         });
     }
 });
@@ -89,4 +88,43 @@ var MyComponent2 = React.createClass({
 React.render(
     <MyComponent2 />,
     document.getElementById('myDiv5')
+);
+
+var CommentBox = React.createClass({displayName: 'Comment Box',
+render: function () {
+    return (
+        React.createElement('div', {className: "commentBox"},
+            React.createElement('p', {className: "koalaBear"},
+            "Hello, I'm a comment box"),
+        "And this is my assistant")
+    )
+}});
+
+React.render(
+    React.createElement(CommentBox, null),
+    document.getElementById('myDiv')
+);
+
+React.render(
+    React.createElement('p', [], ['layer1','layer2','layer3']),  // why are these children all <span>?
+    document.getElementById('myDiv2')
+);
+
+var List = React.createClass({
+    render: function() {
+        return (
+            <ol type='I'>
+                {
+                    this.props.items.map(function(item) {
+                        return <li key={item}>{item}</li>
+                    })
+                }
+            </ol>
+        )
+    }
+});
+
+React.render(
+    <List items={['apples','bananas','pineapples']}/>,
+    document.getElementById('listStuff')
 );
