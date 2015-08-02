@@ -6,6 +6,16 @@ var ObjectRow = React.createClass({
     }
 });
 
+
+var AppleComponent = React.createClass({
+    render: function() {
+        return (
+            <img src="static/apple.png"></img>
+        )
+    }
+});
+
+
 var BananaComponent = React.createClass({
     render: function() {
         var rows = [];
@@ -17,3 +27,4 @@ var BananaComponent = React.createClass({
 });
 
 module.exports = BananaComponent;
+module.exports = AppleComponent;
