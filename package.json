@@ -1,0 +1,27 @@
+{
+  "name": "fruit-app",
+  "version": "0.0.2",
+  "description": "Example Fruit application to figure out how to use React.",
+  "repository": "https://github.com/bev-a-tron/react-learning",
+  "main": "js/app.js",
+  "dependencies": {
+    "classnames": "^2.1.3",
+    "flux": "^2.0.0",
+    "react": "^0.13.0",
+    "webpack": "^1.8.5"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "reactify": "^0.15.2",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify -o js/bundle.js -v -d js/app.js"
+  },
+  "author": "Beverly Lau",
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  }
+}

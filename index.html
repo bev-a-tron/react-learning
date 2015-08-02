@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="bin/jquery-1.11.3.min.js"></script>
     <script src="bin/react-0.13.3/build/react.js"></script>
     <script src="bin/react-0.13.3/build/JSXTransformer.js"></script>
-    <script>
-        $(function(){
-            $("#includedContent").load("fruit.html");
-        });
-    </script>
 </head>
 <body>
-<div id="includedContent"></div>
-<div id="myDiv">Testing</div>
-<div id="myDiv2">Testing, again</div>
-<div id="myDiv3">This is more stuff.</div>
-<div id="myDiv4">Hallllloooooo.</div>
-<div id="myDiv5">This should be a state number.</div>
-<div id="listStuff">This is a list</div>
-<script src='script.js' type="text/jsx"></script>
-<script src='fruit_script.js' type="text/jsx"></script>
+<div id="fruit"></div>
+<script src='js/bundle.js' type="text/jsx"></script>
 </body>
 </html>
