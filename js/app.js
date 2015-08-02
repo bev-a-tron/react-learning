@@ -1,13 +1,5 @@
-var FruitComponent = React.createClass({
-    render: function() {
-        return (
-            <div>
-                <p><BananaComponent number={this.props.number}/></p>
-                <p><AppleComponent number={this.props.number}/></p>
-            </div>
-        )
-    }
-});
+var React = require('react');
+
 
 var ObjectRow = React.createClass({
     render: function() {
@@ -31,6 +23,19 @@ var AppleComponent = React.createClass({
     render: function() {
         return (
             <img src="static/apple.png"></img>
+        )
+    }
+});
+
+
+
+var FruitComponent = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <p><BananaComponent number={this.props.number}/></p>
+                <p><AppleComponent number={this.props.number}/></p>
+            </div>
         )
     }
 });
